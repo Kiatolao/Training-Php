@@ -31,3 +31,5 @@ $classe = [
         'notes' => [18, 13, 12, 16, 11, 17]
     ]
 ];
+echo $classe[1]['notes'][3]."\n";
+
