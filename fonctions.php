@@ -41,3 +41,13 @@ if (( $heure >=9 && $heure <= 12) || ( $heure >=14 && $heure <=17)) {
 } else {
     echo 'Le magasin est fermé';
 }
+
+/*
+TRUE && TRUE = TRUE
+TRUE && FALSE = FALSE
+FALSE && FALSE = FALSE
+
+TRUE || TRUE = TRUE
+TRUE || FALSE = TRUE
+FALSE || FALSE = FALSE
+*/
