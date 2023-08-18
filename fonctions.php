@@ -1,5 +1,6 @@
 <?php
 
+/*
 //Fonction qui affiche la moyenne
 $notes = (int)readline('Quelle est votre note ?: ');
 
@@ -11,6 +12,7 @@ if ($notes >10) {
  else {
     echo 'Dommage vous n\'avez pas la moyenne';
 }
+*/
 
 //Fonction switch
 $action = (int)readline('Entrez votre action: (1: attaquer, 2: défendre, 3: passer mon tour)');
