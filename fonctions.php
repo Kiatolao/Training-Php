@@ -1,7 +1,8 @@
 <?php
 
-/*
 //Fonction qui affiche la moyenne
+
+/*
 $notes = (int)readline('Quelle est votre note ?: ');
 
 if ($notes >10) {
@@ -15,7 +16,8 @@ if ($notes >10) {
 */
 
 //Fonction switch
-$action = (int)readline('Entrez votre action: (1: attaquer, 2: défendre, 3: passer mon tour)');
+
+/* $action = (int)readline('Entrez votre action: (1: attaquer, 2: défendre, 3: passer mon tour)');
 switch ($action) {
     case 1:
         echo 'J\'attaque';
@@ -29,5 +31,13 @@ switch ($action) {
     default:
         echo 'Commande inconnue';
         break;
-}
+} */
 
+//Fonction horaire d'ouverture
+$heure = (int)readline('Entrez une heure: ');
+
+if (( $heure >=9 && $heure <= 12) || ( $heure >=14 && $heure <=17)) {
+    echo 'Le magasin est ouvert';
+} else {
+    echo 'Le magasin est fermé';
+}
