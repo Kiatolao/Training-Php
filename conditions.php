@@ -1,6 +1,6 @@
 <?php
 
-//Fonction qui affiche la moyenne
+//Condition qui affiche la moyenne
 
 /*
 $notes = (int)readline('Quelle est votre note ?: ');
@@ -15,7 +15,7 @@ if ($notes >10) {
 }
 */
 
-//Fonction switch
+//Condition switch
 
 /* $action = (int)readline('Entrez votre action: (1: attaquer, 2: défendre, 3: passer mon tour)');
 switch ($action) {
@@ -33,7 +33,7 @@ switch ($action) {
         break;
 } */
 
-//Fonction horaire d'ouverture
+//Condition horaire d'ouverture
 $heure = (int)readline('Entrez une heure: ');
 
 if (( $heure >=9 && $heure <= 12) || ( $heure >=14 && $heure <=17)) {
