@@ -102,7 +102,15 @@ while (true) {
     }
 }
 
-$input = readline("Entrez une heure d'ouverture: ");
+echo "Le magasin sera ouvert de ";
+foreach($creneaux as $k => $creneau) {
+    if ($k > 0) {
+        echo ' et de ';
+    }
+    echo $creneau[0] . 'h à ' . $creneau[1] . 'h';
+}
+
+/* $input = readline("Entrez une heure d'ouverture: ");
 $creneauTrouve =false;
 
 foreach ($creneaux as $creneau) {
@@ -117,5 +125,5 @@ if ($creneauTrouve) {
 } else {
     echo "Le magasin sera fermé";
 }
-
+ */
 
