@@ -42,7 +42,7 @@ foreach ($eleves as $key => $eleve) {
 } */
 
 //other exempple foreach
-$eleves = [
+/* $eleves = [
     'cm2' => ['Mathurin', 'Amine', 'Thais', 'Lea'],
     'grande section' => ['Antoine', 'Leonard', 'Michel']
 ];
@@ -54,7 +54,7 @@ foreach ($eleves as $classe => $listEleves) {
     }
     echo "\n";
 }
-
+ */
 
 //Exercice foreach
 
@@ -86,9 +86,36 @@ foreach ($notes as $note) {
     echo "- $note \n";
 } */
 
-$horaires = [];
-$jours = ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi'];
 
-for ($i = 0; $i < 5; $i++) {
-    $action = readline("Entrez l'horaire pour $jours[$i] ");
+while (true) {
+    
+    $ouverture = readline('Entrez les horaires d\'ourveture du magasin ');
+    $fermeture = readline('Entrez les horaires de fermeture du magasin ');
+    if ($ouverture > $fermeture) {
+        echo "L'horaire d'ouverture ne peut être plus grande que l'horaire de fermeture";
+    } else {
+        $creneaux[] = [$ouverture, $fermeture];
+        $action = readline("Souhaitez vous changer la plage horaire? (o/n)");
+        if ($action === 'n') {
+            break;
+        }
+    }
 }
+
+$input = readline("Entrez une heure d'ouverture: ");
+$creneauTrouve =false;
+
+foreach ($creneaux as $creneau) {
+    if ($input >= $creneau[0] && $input < $creneau[1]) {
+        $creneauTrouve = true;
+        break;
+    }
+}
+
+if ($creneauTrouve) {
+    echo "Le magasin est ouvert";
+} else {
+    echo "Le magasin sera fermé";
+}
+
+
