@@ -28,4 +28,12 @@ $notes[] = 11;
 var_dump($notes, $notes2);
  */
 
- //Fonction exit
+ //Fonction filtre à insulte
+
+ $action = readline('Entrez un phrase: ');
+ $insultes= ['merde', 'con'];
+
+foreach ($insultes as $insulte) {
+    $action = str_replace($insulte, '****', $action);
+}
+echo "$action";
