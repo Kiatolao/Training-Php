@@ -1,16 +1,23 @@
 <?php
 $title = 'Web';
-$nav = 'index';
 include 'fonctionsUser.php';
 
- /* demande_creneaux (); */
+function nav_items (string $lien, string $title): string {
+$classe = 'nav-item';
+if ($_SERVER['SCRIPT_NAME'] === $lien) {
+  $classe = $classe . 'active';
+}
+return '<li class="' . $classe . '">
+          <a class= "nav-link"  href="' .$lien . '">' . $title . ' </a>
+        </li>';  
+}
+
 ?>
 
-<!-- Voir les infos server en preformaté -->
+<!-- Voir les infos server en preformaté pour connaitre SCRIPT_NAME-->
 <pre>
   <?php print_r ($_SERVER)?>
 </pre>
-
 
 
 <!-- Implémentation exemeple -->
@@ -28,4 +35,4 @@ include 'fonctionsUser.php';
 
 <!-- changer l état de la page active -->
 
-<li class= 'nav' <?php if ($nav === 'index'): ?> active<?php endif?>>
+<?= nav_items('/index.php', 'Accueil'); ?>
