@@ -55,7 +55,7 @@ function repondre_oui_non($phrase) {
 
 function demande_creneaux () {
     
-while (true) {
+    while (true) {
     
     $ouverture = readline('Entrez les horaires d\'ourveture du magasin ');
     $fermeture = readline('Entrez les horaires de fermeture du magasin ');
@@ -68,9 +68,9 @@ while (true) {
             break;
         }
     }
-}
+    }
 
-return [$ouverture, $fermeture];
+    return [$ouverture, $fermeture];
 
 }
 
