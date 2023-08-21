@@ -28,7 +28,7 @@ function bonjour ($name = null, $lastName) {
 echo bonjour (' Jean', $lastName); */
 
 //variable global (mauvaise pratique)
-$lastName = 'doe';
+/* $lastName = 'doe';
 function bonjour ($name = null) {
     global $lastName;
     if ($name === null) {
@@ -37,4 +37,22 @@ function bonjour ($name = null) {
     return "Bonjour $name $lastName \n";
 }
 
-echo bonjour (' Jean', $lastName);
+echo bonjour (' Jean', $lastName); */
+
+// exo repondre oui/non
+
+function repondre_oui_non($phrase) {
+    while (true) {
+        $reponse =readline($phrase.'oui ou non?');
+    if ($reponse === 'oui') {
+        return true;
+    } elseif ($reponse === 'non') {
+        return false;
+    } 
+    }
+
+}
+
+$resultat = repondre_oui_non ('Voulez-vous continuer? ');
+var_dump($resultat);
+
