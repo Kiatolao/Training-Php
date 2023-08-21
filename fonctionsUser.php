@@ -17,12 +17,12 @@ $salutation = bonjour ("Jean \n");
 echo $salutation; */
 
 // alternative
-function bonjour ($name = null) {
+$lastName = 'doe';
+function bonjour ($name = null, $lastName) {
     if ($name === null) {
         return "Bonjour \n";
     }
-    return 'Bonjour' . $name ."\n";
+    return "Bonjour $name $lastName \n";
 }
 
-echo bonjour ();
-echo bonjour (' Jean');
+echo bonjour (' Jean', $lastName);
