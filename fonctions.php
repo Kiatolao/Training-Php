@@ -28,7 +28,7 @@ $notes[] = 11;
 var_dump($notes, $notes2);
  */
 
- //Fonction filtre à insulte methode 1
+ //Fonction filtre à insulte 
 
  $action = readline('Entrez un phrase: ');
  $insultes= ['merde', 'con'];

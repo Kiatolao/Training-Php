@@ -40,7 +40,7 @@ function bonjour ($name = null) {
 echo bonjour (' Jean', $lastName); */
 
 // exo repondre oui/non
-
+$title= 'Test';
 function repondre_oui_non($phrase) {
     while (true) {
         $reponse =readline($phrase.'oui ou non?');
