@@ -17,8 +17,20 @@ $salutation = bonjour ("Jean \n");
 echo $salutation; */
 
 // alternative
-$lastName = 'doe';
+/* $lastName = 'doe';
 function bonjour ($name = null, $lastName) {
+    if ($name === null) {
+        return "Bonjour \n";
+    }
+    return "Bonjour $name $lastName \n";
+}
+
+echo bonjour (' Jean', $lastName); */
+
+//variable global (mauvaise pratique)
+$lastName = 'doe';
+function bonjour ($name = null) {
+    global $lastName;
     if ($name === null) {
         return "Bonjour \n";
     }
