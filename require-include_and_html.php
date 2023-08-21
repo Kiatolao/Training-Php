@@ -1,4 +1,6 @@
 <?php
+$title = 'Web';
+$nav = 'index';
  include 'fonctionsUser.php';
 
  /* demande_creneaux (); */
@@ -10,8 +12,13 @@
 
 <title>
     <?php if (isset($title)):?>
-      <?php echo $title; ?>
+      <?= $title ?>
+      <!-- '< ?= est égal à echo -->
       <?php else : ?>
         Mon site
       <?php endif ?>  
 </title>
+
+<!-- changer l état de la page active -->
+
+<li class= 'nav' <?php if ($nav === 'index'): ?> active<?php endif?>>
