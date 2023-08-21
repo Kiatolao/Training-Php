@@ -1,10 +1,17 @@
 <?php
 $title = 'Web';
 $nav = 'index';
- include 'fonctionsUser.php';
+include 'fonctionsUser.php';
 
  /* demande_creneaux (); */
 ?>
+
+<!-- Voir les infos server en preformaté -->
+<pre>
+  <?php print_r ($_SERVER)?>
+</pre>
+
+
 
 <!-- Implémentation exemeple -->
 
