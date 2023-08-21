@@ -53,6 +53,28 @@ function repondre_oui_non($phrase) {
 
 }
 
+function demande_creneaux () {
+    
+while (true) {
+    
+    $ouverture = readline('Entrez les horaires d\'ourveture du magasin ');
+    $fermeture = readline('Entrez les horaires de fermeture du magasin ');
+    if ($ouverture > $fermeture) {
+        echo "L'horaire d'ouverture ne peut être plus grande que l'horaire de fermeture";
+    } else {
+        $creneaux[] = [$ouverture, $fermeture];
+        $action = readline("Souhaitez vous changer la plage horaire? (o/n)");
+        if ($action === 'n') {
+            break;
+        }
+    }
+}
+
+return [$ouverture, $fermeture];
+
+}
+
 $resultat = repondre_oui_non ('Voulez-vous continuer? ');
+$crenau = demande_creneaux();
 var_dump($resultat);
 
