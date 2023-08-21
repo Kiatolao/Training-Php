@@ -2,14 +2,17 @@
 $title = 'Web';
 include 'fonctionsUser.php';
 
+//creation d une fonction avec HEREDOC pour un meilleur formatage 
 function nav_items (string $lien, string $title): string {
 $classe = 'nav-item';
 if ($_SERVER['SCRIPT_NAME'] === $lien) {
   $classe = $classe . 'active';
 }
-return '<li class="' . $classe . '">
-          <a class= "nav-link"  href="' .$lien . '">' . $title . ' </a>
-        </li>';  
+return <<<HTML
+'<li class="$classe">
+    <a class= "nav-link"  href="$lien">$title</a>
+</li>'; 
+HTML; 
 }
 
 ?>
