@@ -24,3 +24,16 @@ pour ajouter le texte existant sans le remplacer;
 */
 
 echo file_get_contents ($fichier);
+
+
+//Pour lire les gros fichier
+$ressource= fopen($fichier, 'r');
+$k= 0;
+while ($line = fgets($ressource)) {
+    $k++;
+    if ($k === 1230) {
+        echo $line;
+        break;
+    }
+}
+fclose($fichier);
