@@ -17,13 +17,13 @@ HTML;
 
 ?>
 
-<!-- Voir les infos server en preformaté pour connaitre SCRIPT_NAME-->
+<!-- Voir les infos server en preformaté pour connaitre le SCRIPT_NAME-->
 <pre>
   <?php print_r ($_SERVER)?>
 </pre>
 
 
-<!-- Implémentation exemeple -->
+<!-- Implémentation exemple -->
 
  <title><?php if (isset($title)) {echo $title;} else {echo 'Titre de ma page';} ?> </title> 
 
