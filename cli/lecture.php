@@ -8,7 +8,7 @@
 var_dump(__DIR__);
 $fichier = __DIR__. DIRECTORY_SEPARATOR . 'demo.txt';
 
-$size= @file_put_contents ($fichier,'Salut!');
+$size= @file_put_contents ($fichier,"\nSalut");
 if($size === false){
     echo'Impossible d\'ecrire le fichier';
 } else {
@@ -22,3 +22,5 @@ php cli/lecture.php
 on peut ajouter file_put_contents ($fichier,'Salut!', FILE_APPEND) 
 pour ajouter le texte existant sans le remplacer;
 */
+
+echo file_get_contents ($fichier);
