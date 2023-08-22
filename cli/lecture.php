@@ -8,7 +8,7 @@
 var_dump(__DIR__);
 $fichier = __DIR__. DIRECTORY_SEPARATOR . 'demo.txt';
 
-$size= file_put_contents ($fichier,'Salut!');
+$size= @file_put_contents ($fichier,'Salut!');
 if($size === false){
     echo'Impossible d\'ecrire le fichier';
 } else {
@@ -16,6 +16,7 @@ if($size === false){
 }
 
 /* 
+@ sert a rendre l'écriture silencieuse mais il faudra gérer le cas avec une condition par exemple
 pour executer la commande 
 php cli/lecture.php
 on peut ajouter file_put_contents ($fichier,'Salut!', FILE_APPEND) 
