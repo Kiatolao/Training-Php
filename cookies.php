@@ -6,6 +6,8 @@ if(!empty($_GET['action']) && $_GET['action'] === 'deconnecter'){
     //retour dans le passé pour effacer le cookie
     setcookie('utilsateur', '', time() -3600);
 }
+
+//pour un tableau  utilisateur voir: serialize/unserialize
 if(!empty($_COOKIE['utilisateur'])){
     $name = $_COOKIE['utilisateur'];
 }
@@ -16,6 +18,7 @@ if (!empty($_POST['name'])) {
 ?>
 
 <?php if ($name) : ?>
+    <!-- html entities pour securiser l'entrée -->
     <h1>Bonjour <?=htmlentities($name)?></h1>
     <a href="cookies.php?action=deconnecter">Se déconnecter</a>
     <?php else :?>
