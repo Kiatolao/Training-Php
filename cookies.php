@@ -1,13 +1,28 @@
 <?php
-// basic cookie line 
-setcookie('utilisateur', 'jhon', time() + 60*60*24);
-var_dump ($_COOKIE);
+$name = null;
+// changer la variable name pour se deconnecter
+if(!empty($_GET['action']) && $_GET['action'] === 'deconnecter'){
+    unset($_COOKIE['utilisateur']);
+    //retour dans le passé pour effacer le cookie
+    setcookie('utilsateur', '', time() -3600);
+}
+if(!empty($_COOKIE['utilisateur'])){
+    $name = $_COOKIE['utilisateur'];
+}
+if (!empty($_POST['name'])) {
+    setcookie('utilisateur', $_POST['name'], time() + 60*60*24);
+}
 
 ?>
 
+<?php if ($name) : ?>
+    <h1>Bonjour <?=htmlentities($name)?></h1>
+    <a href="cookies.php?action=deconnecter">Se déconnecter</a>
+    <?php else :?>
 <form action="" method="post">
     <div>
-        <input type="text" name="champs" placeholder="Entrez votre nom">
+        <input type="text" name="name" placeholder="Entrez votre nom">
         <button>Envoyer</button>
     </div>
 </form>
+<?php endif; ?>
