@@ -5,16 +5,15 @@ $deviner =150;
 $error= null;
 $succes= null;
 $value = null;
-if (isset($_POST['chiffre'])){
-    $value = htmlentities($_POST['chiffre']);
-    if ($value > $deviner) {
+if (isset($_GET['chiffre'])){
+    if ($_GET['chiffre'] > $deviner) {
         $error = 'Votre chiffre est trop grand';
-    } elseif ($value< $deviner) {
+    } elseif ($_GET['chiffre'] < $deviner) {
         $error = 'Votre chiffre est trop petit ';
     } else {
         $succes = "Bravo, vous avez trouvez le bon chiffre $deviner";
     }
-    
+    $value = $_GET['chiffre'];
 }
 
 ?>
@@ -29,8 +28,8 @@ if (isset($_POST['chiffre'])){
     </div>
 <?php endif ?>
 
-<form action="/jeu.php" method="POST">
-    <input type="number" name="chiffre[]" placeholder="Entrez un numbre entre 0 et 1000" value="<?= $value ?>">
+<form action="/jeu.php" method="GET">
+    <input type="number" name="chiffre" placeholder="Entrez un numbre entre 0 et 1000" value="<?= $value ?>">
     <button type="submit">Submit</button>
 </form> 
 
