@@ -30,7 +30,7 @@ if (isset($_POST['chiffre'])){
 <?php endif ?>
 
 <form action="/jeu.php" method="POST">
-    <input type="number" name="chiffre" placeholder="Entrez un numbre entre 0 et 1000" value="<?= $value ?>">
+    <input type="number" name="chiffre[]" placeholder="Entrez un numbre entre 0 et 1000" value="<?= $value ?>">
     <button type="submit">Submit</button>
 </form> 
 
