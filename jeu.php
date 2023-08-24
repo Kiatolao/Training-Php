@@ -1,14 +1,41 @@
 <?php
 //nombre à faire deviner
 $deviner =150;
+// mise en place de chiffre
+$error= null;
+$succes= null;
+$value = null;
+if (isset($_GET['chiffre'])){
+    if ($_GET['chiffre'] > $deviner) {
+        $error = 'Votre chiffre est trop grand';
+    } elseif ($_GET['chiffre'] < $deviner) {
+        $error = 'Votre chiffre est trop petit ';
+    } else {
+        $succes = "Bravo, vous avez trouvez le bon chiffre $deviner";
+    }
+    $value = htmlentities($_GET['chiffre']);
+}
+
 ?>
 
-<!-- recupère le nombre -->
-<pre>
-    <?php var_dump($_GET) ?>
-</pre>
+<?php if ($error) :?>
+    <div class="alert">
+        <?= $error ?>
+    </div>
+<?php elseif ($succes) :?>
+    <div class="alert">
+        <?= $succes ?>
+    </div>
+<?php endif ?>
 
-<!-- input user -->
+<form action="/jeu.php" method="GET">
+    <input type="number" name="chiffre" placeholder="Entrez un numbre entre 0 et 1000" value="<?= $value ?>">
+    <button type="submit">Submit</button>
+</form> 
+
+<?php
+
+/* version bordelique
 <?php if (isset($_GET['chiffre'])) :?>
     <?php if ($_GET['chiffre'] > $deviner): ?>
         <p>Votre chiffre est trop grand</p>
@@ -21,4 +48,6 @@ $deviner =150;
 <form action="/jeu.php" method="GET">
     <input type="number" name="chiffre" placeholder="Entrez un numbre entre 0 et 1000" value="<?php if (isset($_GET['chiffre'])) {echo htmlentities($_GET['chiffre']);} ?>">
     <button type="submit">Submit</button>
-</form>
+</form> 
+*/
+?>
