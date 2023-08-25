@@ -1,12 +1,15 @@
 <?php
+
 define ('CRENEAUX', [
     [8, 12],
     [14, 19]
 ]);
 CRENEAUX;
-function creneaux_html (array $creneaux {
-
-});
+function creneaux_html (array $creneaux) {
+    $ouverture = [9, 13];
+    $fermeture = [12, 17];
+    implode(",", $ouverture, $fermeture);
+};
 $creneaux = creneaux_html(CRENEAUX);
 ?>
 
